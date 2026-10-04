@@ -1,0 +1,44 @@
+Sections:
+    - name: Education
+      contents:
+          - title: De La Salle University - Manila
+            subtitle: Bachelor of Science in Computer Science, Major in Software Technology
+            start: September 2023
+          - title: San Beda University - Manila
+            subtitle: Senior High School - STEM | With Honors
+            start: August 2021
+            end: May 2023
+    - name: Relevant Experience
+      contents:
+          - title: Peer Tutor Society
+            subtitle: Associate Vice President for Web Development
+            start: September 2024
+            end: September 2025
+            desc: Work alongside select tutors to revamp website to help with maintainability. Implemented a number of features and performed Quality Assurance.
+          - title: Software Engineering Course
+            subtitle: Lead Developer
+            start: May 2025
+            end: August 2025
+            desc: Led developers, created style guide, and designed software architecture for a student management system with our partner NGO.
+    - name: Suplmentary Experience
+      contents:
+          - title: Peer Tutor Society
+            subtitle: Tutor
+            start: September 2023
+            desc: Regularly help tutees from lower batches with the material in their courses.
+          - title: Web Applications StackExchange
+            subtitle: Contrbutor
+            desc: >
+                Provided step-by-step solutions to Google Sheets and other web application related questions,
+                earning more than 1k reputation points for high-quality responses.
+    - name: Certifications
+      contents:
+        - title: AWS Certified Cloud Practitioner
+          subtitle: Credly Badge certified
+          start: August 2026
+          noend: true
+          link: https://www.credly.com/earner/earned/badge/f12da877-907b-4c8f-8ab7-3df1362ac251
+        - title: Civil Service Eligibility
+          subtitle: Civil Service Commission of the Philippines (CSC)
+          start: May 2022
+          noend: true

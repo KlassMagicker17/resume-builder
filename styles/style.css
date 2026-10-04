@@ -1,0 +1,110 @@
+html {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+a {
+    color: rgb(198, 9, 9);
+}
+
+a:visited {
+    color: rgb(147, 24, 90);
+}
+
+/* 
+    UTILITY CLASSES
+*/
+
+.icon {
+    width: 1em;
+    height: 1em;
+}
+
+.nobr {
+    white-space: nowrap;
+}
+
+
+/*
+    HEADER CLASSES
+*/  
+
+header {
+    margin: 2em 0px;
+    text-align: center;
+}
+
+header > hgroup {
+    display: flex;
+    flex-flow: column;
+    gap: 0.3em;
+    margin-bottom: 0.5em;
+}
+
+header > hgroup > h1 {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+header address {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    padding: 0px 1em;
+}
+
+header >  a {
+    display: flex;
+    gap: 0.4em;
+}
+
+header > hr {
+    border-top: solid 2px black; 
+}
+
+/*
+    MAIN CLASSES
+*/
+
+
+main {
+    margin: 1em auto;
+    max-width: 850px;
+}
+
+main h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-top: 1em;
+    text-transform:uppercase;
+}
+
+main h3 {
+    font-size: 1.17em;
+}
+
+.info {
+    padding: 0.5em;
+    border-bottom: solid 1px black;
+}
+
+
+.info > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.info-desc {
+    margin-top: 0.5em;
+    width: 100%;
+    max-width: 35em;
+}
+

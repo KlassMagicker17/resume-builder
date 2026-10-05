@@ -34,6 +34,7 @@ jobs:
 
       - run: npm ci
       - run: npm run build-ghpages
+      - run: npm run build-pdf
 
       - name: Upload static files as artifact
         id: deployment

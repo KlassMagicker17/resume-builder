@@ -7,7 +7,14 @@ async function generatePdfFromHTMLFile(filename) {
   let browser;
   try {
     console.log('Launching browser...');
-    browser = await puppeteer.launch();
+    browser = await puppeteer.launch({
+      headless: true,
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage' // Prevents memory crash issues in CI
+      ]
+    });
 
     console.log('Opening new page...');
     const page = await browser.newPage();

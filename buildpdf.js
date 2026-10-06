@@ -10,13 +10,20 @@ const port = 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Always use absolute path for express static middleware
 app.use(express.static(path.join(__dirname, '_site')));
-const instance = app.listen(port);
 
 async function generatePdfFromHTMLFile(filename) {
   let browser;
+  let instance;
   try {
+
+    instance = await new Promise((resolve) => {
+      const server = app.listen(port, () => {
+        console.log(`Express server running on http://localhost:${port}`);
+        resolve(server);
+      });
+    });
+
     console.log('Launching browser...');
     browser = await puppeteer.launch({
       headless: true,

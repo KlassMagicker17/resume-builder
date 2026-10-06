@@ -3,12 +3,15 @@ import puppeteer from 'puppeteer';
 import path, { format } from 'path';
 import express from 'express';
 import fs from 'fs';
-import { URL } from 'url';
+import { URL, fileURLToPath } from 'url';
 
 const app = express();
 const port = 3000;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-app.use(express.static("_site"));
+// Always use absolute path for express static middleware
+app.use(express.static(path.join(__dirname, '_site')));
 const instance = app.listen(port);
 
 async function generatePdfFromHTMLFile(filename) {

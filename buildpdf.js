@@ -7,8 +7,9 @@ import { URL } from 'url';
 
 const app = express();
 const port = 3000;
+const reponame = process.argv[2];
 
-app.use(express.static('_site'));
+app.use(reponame, express.static('_site'));
 const instance = app.listen(port);
 
 async function generatePdfFromHTMLFile(filename) {
@@ -74,8 +75,5 @@ async function generatePdfFromHTMLFile(filename) {
   }
 }
 
-const reponame = process.argv[2];
-console.log(process.argv);
-console.log(path.join(reponame, "index.html"))
 generatePdfFromHTMLFile(path.join(reponame, "index.html"));
 

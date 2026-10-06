@@ -1,25 +1,48 @@
 ---
 layout: "base.njk"
 ---
-{% for section in infos.Sections %}
-<section>
-    <h2>{{section.name}}</h2>
-    <hr />
-    {% for info in section.contents %}
-    <section class="info">
-        <h3>{{ info.title }}{% if info.link != null %}<a href="{{ info.link }}">&nearr;</a>{% endif %}</h3>
-        <div>
-            <p>{{ info.subtitle }}</p>
-            <p>{{ info.start }}
-                {% if not info.noend %}
-                &mdash; {{ info.end | default: "Present"}}
-                {% endif %}
-            </p>
-        </div>
-        {% if info.desc != null %}
-        <p class="info-desc">{{ info.desc }}</p>
-        {% endif %}
+<style>
+    main {
+        margin: 1em 1em;
+    }
+
+    @media (min-width: 850px) {
+        main {
+            display: flex;
+            margin: 1em auto;
+        }
+    }
+</style>
+<aside>
+    <h2>Printable Resumes:</h2>
+    <ul>
+        <li><a href="/pdf/A4/Ross David Tan.pdf">A4</a></li>
+        <li><a href="/pdf/Letter/Ross David Tan.pdf">Letter</a></li>
+        <li><a href="/pdf/Legal/Ross David Tan.pdf">Legal</a></li>
+        <li><a href="/pdf/printable">HTML</a></li>
+    </ul>
+</aside>
+<div>
+    {% for section in infos.Sections %}
+    <section>
+        <h2>{{section.name}}</h2>
+        <hr />
+        {% for info in section.contents %}
+        <section class="info">
+            <h3>{{ info.title }}{% if info.link != null %}<a href="{{ info.link }}">&nearr;</a>{% endif %}</h3>
+            <div>
+                <p>{{ info.subtitle }}</p>
+                <p>{{ info.start }}
+                    {% if not info.noend %}
+                    &mdash; {{ info.end | default: "Present"}}
+                    {% endif %}
+                </p>
+            </div>
+            {% if info.desc != null %}
+            <p class="info-desc">{{ info.desc }}</p>
+            {% endif %}
+        </section>
+        {% endfor %}
     </section>
     {% endfor %}
-</section>
-{% endfor %}
+</div>

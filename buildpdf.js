@@ -40,6 +40,12 @@ async function generatePdfFromHTMLFile(filename) {
     console.log('Setting page content...');
     const absolutePath = new URL(filename, "http://localhost:3000");
 
+    page.on('response', response => {
+      if (response.status() >= 400) {
+        console.error(`[404/Error] ${response.status()} - ${response.url()}`);
+      }
+    });
+
     await page.goto(`${absolutePath}`, { waitUntil: ['networkidle0', 'load'] });
 
     await page.emulateMediaType('print');

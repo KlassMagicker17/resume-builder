@@ -7,7 +7,7 @@ import { URL } from 'url';
 
 const app = express();
 const port = 3000;
-const reponame = process.argv[2];
+const reponame = process.argv[2] ?? "/";
 
 app.use(reponame, express.static('_site'));
 const instance = app.listen(port);
@@ -32,12 +32,6 @@ async function generatePdfFromHTMLFile(filename) {
     console.log('Setting page content...');
     const absolutePath = new URL(filename, "http://localhost:3000");
 
-    page.on('response', response => {
-      if (response.status() >= 400) {
-        console.error(`[404/Error] ${response.status()} - ${response.url()}`);
-      }
-    });
-
     await page.goto(absolutePath, { waitUntil: ['networkidle0', 'load'] });
 
     await page.emulateMediaType('print');
@@ -45,6 +39,7 @@ async function generatePdfFromHTMLFile(filename) {
     const pdfPageFormats = [
       'A4', 'Letter', 'Legal'
     ]
+    
     for (const format of pdfPageFormats) {
       console.log(`Generating PDF... (format = ${format})`);
       const pdfBuffer = await page.pdf({

@@ -7,13 +7,9 @@ layout: "base.njk"
     <hr />
     {% for info in section.contents %}
     <section class="info">
-        <h3>{{ info.title }} 
-                {% if info.link != null %}
-                    <a href="{{ info.link }}">&nearr;</a>
-                {% endif %}</h3>
+        <h3>{{ info.title }}{% if info.link != null %}<a href="{{ info.link }}">&nearr;</a>{% endif %}</h3>
         <div>
-            <p>{{ info.subtitle }}
-            </p>
+            <p>{{ info.subtitle }}</p>
             <p>{{ info.start }}
                 {% if not info.noend %}
                 &mdash; {{ info.end | default: "Present"}}

@@ -34,7 +34,7 @@ jobs:
 
       - run: npm ci
       - run: npx @11ty/eleventy --pathprefix=${{ github.event.repository.name }}
-      - run: node buildpdf.js ${{ github.event.repository.name }}
+      - run: node buildpdf.js /${{ github.event.repository.name }}
 
       - name: Upload static files as artifact
         id: deployment

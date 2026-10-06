@@ -1,28 +1,19 @@
 // from https://mofadlalla.io/2025/08/21/the-ultimate-guide-to-generating-pdfs-from-html-with-nodejs-and-puppeteer-2292.html
 import puppeteer from 'puppeteer';
-import path, { format } from 'path';
+import path from 'path';
 import express from 'express';
 import fs from 'fs';
-import { URL, fileURLToPath } from 'url';
+import { URL } from 'url';
 
 const app = express();
 const port = 3000;
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
-app.use(express.static(path.join(__dirname, '_site')));
+app.use(express.static('_site'));
+const instance = app.listen(port);
 
 async function generatePdfFromHTMLFile(filename) {
   let browser;
-  let instance;
   try {
-
-    instance = await new Promise((resolve) => {
-      const server = app.listen(port, () => {
-        console.log(`Express server running on http://localhost:${port}`);
-        resolve(server);
-      });
-    });
 
     console.log('Launching browser...');
     browser = await puppeteer.launch({
@@ -46,7 +37,7 @@ async function generatePdfFromHTMLFile(filename) {
       }
     });
 
-    await page.goto(`${absolutePath}`, { waitUntil: ['networkidle0', 'load'] });
+    await page.goto(absolutePath, { waitUntil: ['networkidle0', 'load'] });
 
     await page.emulateMediaType('print');
 

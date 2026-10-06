@@ -74,5 +74,8 @@ async function generatePdfFromHTMLFile(filename) {
   }
 }
 
-generatePdfFromHTMLFile("index.html");
+const reponame = process.argv[2];
+console.log(process.argv);
+console.log(path.join(reponame, "index.html"))
+generatePdfFromHTMLFile(path.join(reponame, "index.html"));
 

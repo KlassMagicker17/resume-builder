@@ -70,5 +70,4 @@ async function generatePdfFromHTMLFile(filename) {
   }
 }
 
-generatePdfFromHTMLFile(path.join(reponame, "index.html"));
-
+generatePdfFromHTMLFile(path.join(reponame, "/pdf/html/index.html"));

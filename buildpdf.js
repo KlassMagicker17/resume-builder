@@ -30,7 +30,7 @@ async function generatePdfFromHTMLFile(filename) {
     console.log('Setting page content...');
     const absolutePath = new URL(filename, "http://localhost:3000");
 
-    await page.goto(`${absolutePath}`, { waitUntil: 'networkidle0' });
+    await page.goto(`${absolutePath}`, { waitUntil: ['networkidle0', 'load'] });
 
     await page.emulateMediaType('print');
 

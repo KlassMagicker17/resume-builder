@@ -12,8 +12,9 @@ Sections:
       contents:
           - title: Peer Tutor Society
             subtitle: Associate Vice President for Web Development
-            start: September 2024
-            end: September 2025
+            start: 2024
+            end: 2026
+            link: https://dlsupts.vercel.app/about/legacy
             desc: Work alongside select tutors to revamp website to help with maintainability. Implemented a number of features and performed Quality Assurance.
           - title: Software Engineering Course
             subtitle: Lead Developer

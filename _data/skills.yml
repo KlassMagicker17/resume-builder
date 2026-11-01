@@ -1,0 +1,31 @@
+sections:
+  - name: Languages
+    list:
+      - Javascript
+      - Typescript
+      - HTML
+      - CSS
+      - SQL
+      - Python
+      - C
+      - C++
+      - Java
+      - Google Sheets
+  - name: Frameworks
+    list:
+      - React/Next.js
+      - Svelte/SvelteKit
+      - Dash
+      - Eleventy
+  - name: Technologies
+    list:
+      - Git
+      - Docker
+      - RegEx
+      - Google AppScript
+      - Firebase
+      - Supabase
+      - MySQL
+      - PostgreSQL
+      - MongoDB
+      - AWS

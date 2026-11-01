@@ -1,25 +1,42 @@
 ---
 layout: "base.njk"
 ---
-{% for section in infos.Sections %}
-<section>
-    <h2>{{section.name}}</h2>
-    <hr />
-    {% for info in section.contents %}
-    <section class="info">
-        <h3>{{ info.title }}{% if info.link != null %}<a href="{{ info.link }}">&nearr;</a>{% endif %}</h3>
-        <div>
-            <p>{{ info.subtitle }}</p>
-            <p>{{ info.start }}
-                {% if not info.noend %}
-                &mdash; {{ info.end | default: "Present"}}
-                {% endif %}
-            </p>
-        </div>
-        {% if info.desc != null %}
-        <p class="info-desc">{{ info.desc }}</p>
-        {% endif %}
+<div>
+    <section class="skills">
+        <h2>Skills</h2>
+        <hr />
+
+        {% for section in skills.sections %}
+        <section class="info" >
+            <h3>{{section.name}}</h3>
+            <ul>
+                {% for thing in section.list %}
+                <li>{{thing}}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endfor %}
+    </section>
+    {% for section in infos.sections %}
+    <section>
+        <h2>{{section.name}}</h2>
+        <hr />
+        {% for info in section.contents %}
+        <section class="info">
+            <h3>{{ info.title }}{% if info.link != null %}<a href="{{ info.link }}">&nearr;</a>{% endif %}</h3>
+            <div>
+                <p>{{ info.subtitle }}</p>
+                <p>{{ info.start }}
+                    {% if not info.noend %}
+                    &mdash; {{ info.end | default: "Present"}}
+                    {% endif %}
+                </p>
+            </div>
+            {% if info.desc != null %}
+            <p class="info-desc">{{ info.desc }}</p>
+            {% endif %}
+        </section>
+        {% endfor %}
     </section>
     {% endfor %}
-</section>
-{% endfor %}
+</div>

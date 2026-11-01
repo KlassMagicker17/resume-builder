@@ -102,6 +102,22 @@ main h3 {
 .info-desc {
     margin-top: 0.5em;
     width: 100%;
-    max-width: 35em;
+    max-width: 30em;
 }
 
+.skills ul {
+  display: inline;
+  list-style: none;
+}
+
+.skills li {
+  display: inline;
+}
+
+.skills li:after {
+  content: ", ";
+}
+
+.skills li:last-child:after {
+  content: "";
+}

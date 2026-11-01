@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-ghpages": "npx @11ty/eleventy --pathprefix=/resume-builder/",
-    "build-pdf": "node buildpdf.js"
+    "build-pdf": "node buildpdf.js",
+    "dev": "npx @11ty/eleventy --serve"
   },
   "keywords": [],
   "author": "",
